@@ -16,6 +16,8 @@ At the moment, it is still barely a proof of concept, so I will not be going
  algorithms (and much more code), I opted to go with something simpler that is
  usable enough for what you'd probably want to do anyway.
 
+Does require my [SDL2 framework](https://github.com/alve1801/engine) to work.
+
 ## Roadmap / Todo
 
 - Morphs
