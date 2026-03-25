@@ -18,7 +18,8 @@ At the moment, it is still barely a proof of concept, so I will not be going
 
 Also included is `mapmaker.cpp`, which was an earlier iteration of the same
  idea. It's a small, low-feature paint program, with the gimmick that the
- canvas is a sphere.
+ canvas is a sphere. The upload is for archivial purposes only - if/when I
+ revisit the idea, it'd be as part of TPlate proper.
 
 Does require my [SDL2 framework](https://github.com/alve1801/engine) to work.
 
