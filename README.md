@@ -16,24 +16,28 @@ At the moment, it is still barely a proof of concept, so I will not be going
  algorithms (and much more code), I opted to go with something simpler that is
  usable enough for what you'd probably want to do anyway.
 
+Also included is `mapmaker.cpp`, which was an earlier iteration of the same
+ idea. It's a small, low-feature paint program, with the gimmick that the
+ canvas is a sphere.
+
 Does require my [SDL2 framework](https://github.com/alve1801/engine) to work.
 
 ## Roadmap / Todo
 
 - Morphs
-  - savefiles, rendering, editing, oh my!
-  - "decorations"?
-  - polylines for tracking rifts?
+ - savefiles, rendering, editing, oh my!
+ - "decorations"?
+ - polylines for tracking rifts?
 - UI streamlining
-  - states as objects, or some similar encapsulation? (see minix)
-  - GUI buttons instead of keybindings for everything
+ - states as objects, or some similar encapsulation? (see minix)
+ - GUI buttons instead of keybindings for everything
 - Relations
-  - 'move linked', 'join' etc. Parental stuff currently only doable via savefile
+ - 'move linked', 'join' etc. Parental stuff currently only doable via savefile
   editing
-  - recenter continents of rifting
+ - recenter continents of rifting
 - have pts[] store points on surface instead of screen space (also makes it
  possible to rotate the planet while drawing)
-  - might cause issues w/ the rifting alg?
-  - rifts could use a tooltip for casting the last pt
+ - might cause issues w/ the rifting alg?
+ - rifts could use a tooltip for casting the last pt
 - did we frustrum-cull the rasterizer?
 - speed/distance still wrong
