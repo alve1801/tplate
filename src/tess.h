@@ -21,6 +21,8 @@ int abs(int x){return(x>0?x:-x);}
 //  has an offset of 1, so we can use 0 to denote blanks.
 int zbuf[height*width];
 
+int pick(int mx,int my){return zbuf[my*width+mx]-1;} // neat!
+
 void clear(){for(int i=0;i<height*width;i++) zbuf[i]=0;}
 
 void put(Framework*w,_color col,int ind,int x,int y){
@@ -54,6 +56,7 @@ void tess(Framework*w,int ind,_color col,int*verts,int vnum){
 
 	// view culling
 	if(bbox[0]>width || bbox[1]>height || bbox[2]<0 || bbox[3]<0) return;
+	if(bbox[3]>height) bbox[3]=height; // culls at bottom
 
 	// adjust color for backface
 	if(!ind) col=(col>>1)&0x777;
@@ -120,10 +123,11 @@ void tess(Framework*w,int ind,_color col,int*verts,int vnum){
 		}
 
 		// rasterize line
-		for(lseg*t=line;t;t=t->next){
+		if(y>0) for(lseg*t=line;t;t=t->next){
 			int x=t->x; t=t->next;
 			if(!t) {printf("ERR! - rast\n"); break;}
 			//while(x<t->x) w->p(col,x++,y);
+			// XXX skip screen frustrum?
 			while(x<t->x) put(w,col,ind,x++,y);
 		}
 
